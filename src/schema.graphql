@@ -1,0 +1,27 @@
+type Query {
+    prueba:String!
+}
+
+type AuthToken {
+    token:String
+}
+
+type Mutation {
+    signup(data:UserInput!):AuthToken,
+    login(email:String!, password:String!):AuthToken
+}
+
+enum Gender {
+    Male,
+    Female
+}
+
+input UserInput {
+    first_name:String!,
+    last_name:String!,
+    email:String!,
+    password:String!,
+    birth_date:String,
+    gender:Gender,
+    nationality:String
+}
