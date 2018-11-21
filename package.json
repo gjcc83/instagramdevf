@@ -11,6 +11,9 @@
     "Instagram"
   ],
   "author": "Gilberto Carranza",
+  "contributors": [
+    "Carlos Toscano <lic.carlostoscano@gmail.com>"
+  ],
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.2",
