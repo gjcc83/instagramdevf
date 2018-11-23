@@ -1,20 +1,22 @@
-const Users = require('../schemas/Users');
-const createToken = require('../utils/createToken');
+const Users = require('./../schemas/Users');
+const createToken = require('./createToken');
 
 module.exports = (email, password) => {
-
     return new Promise((resolve, reject) => {
+        Users.findOne({ email: email }).then(user => {
+            if (!user) reject(new Error('Usuario o Password incorrecto'));
 
-        Users.findOne({email:email}).then((user) => {
             user.comparePassword(password, (err, isMatch) => {
+                if (err) reject(err);
+
                 if (isMatch) {
                     resolve(createToken(user));
                 } else {
-                    reject(new Error("Password Does not Match"));
+                    reject(new Error('Usuario o Password incorrecto'));
                 }
-            });
-        }).catch((err) => {
+            })
+        }).catch(err => {
             reject(err);
-        });
-    });
-};
+        })
+    })
+}
