@@ -1,14 +1,14 @@
 type Query {
-    prueba:String!
+
 }
 
 type AuthToken {
-    token:String
+    token: String
 }
 
 type Mutation {
-    signup(data:UserInput!):AuthToken,
-    login(email:String!, password:String!):AuthToken
+    signup(data: UserInput!): AuthToken,
+    login(email: String!, password:String!): AuthToken
 }
 
 enum Gender {
