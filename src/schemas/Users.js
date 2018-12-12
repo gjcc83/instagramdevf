@@ -31,9 +31,9 @@ const UserSchema = new Schema({
         type:String,
         enum:["Male", "Female"]
     },
-    image_id:{
+    image_id:[{
         type:Schema.Types.ObjectId, ref: "images"
-    },
+    }],
     is_active:{
         type:Boolean,
         default:true

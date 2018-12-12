@@ -8,9 +8,9 @@ const ImageSchema = new Schema({
         type:Number,
         default: 0
     },
-    comment_id: {
+    comment_id: [{
         type:Schema.Types.ObjectId, ref: "comments"
-    },
+    }],
     url: {
         type:String,
         required:true
