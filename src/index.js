@@ -4,7 +4,7 @@ const Mutation = require('./resolvers/Mutation');
 const mongoose = require('mongoose');
 const verifyToken = require('./utils/verifyToken');
 
-mongoose.connect('mongodb://netflix:netflix@cluster0-shard-00-00-clh7g.mongodb.net:27017,cluster0-shard-00-01-clh7g.mongodb.net:27017,cluster0-shard-00-02-clh7g.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true', { useNewUrlParser: true });
+mongoose.connect('mongodb://prueba:prueba123@cluster0-shard-00-00-kcugd.mongodb.net:27017,cluster0-shard-00-01-kcugd.mongodb.net:27017,cluster0-shard-00-02-kcugd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true', { useNewUrlParser: true });
 
 const db = mongoose.connection;
 
@@ -26,7 +26,7 @@ const server = new GraphQLServer({
 })
 
 const options = {
-    port: 8000,
+    port: 8001,
     endpoint: '/graphql',
     playground: '/playground'
 };

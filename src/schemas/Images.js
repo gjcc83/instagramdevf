@@ -9,7 +9,7 @@ const ImageSchema = new Schema({
         default: 0
     },
     comment_id: [{
-        type:Schema.Types.ObjectId, ref: "comments"
+        type:Schema.Types.ObjectId, ref: "commentsInstagram"
     }],
     url: {
         type:String,
@@ -18,6 +18,9 @@ const ImageSchema = new Schema({
     description: {
         type:String,
         required:true
+    },
+    user_id:{
+        type:Schema.Types.ObjectId, ref: "usersInstagram"
     },
     is_active: {
         type:Boolean,

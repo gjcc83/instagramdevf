@@ -29,10 +29,10 @@ const UserSchema = new Schema({
     },
     gender:{
         type:String,
-        enum:["Male", "Female"]
+        enum:["MALE", "FEMALE"]
     },
     image_id:[{
-        type:Schema.Types.ObjectId, ref: "images"
+        type:Schema.Types.ObjectId, ref: "imagesInstagram"
     }],
     is_active:{
         type:Boolean,

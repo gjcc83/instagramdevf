@@ -11,6 +11,9 @@ const CommentsSchema = new Schema({
     is_active: {
         type:Boolean,
         default:true
+    },
+    user_id: {
+        type:Schema.Types.ObjectId, ref: "usersInstagram"
     }
 }, {'collection': 'commentsInstagram', timestamps: true})
 

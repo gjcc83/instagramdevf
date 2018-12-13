@@ -1,5 +1,6 @@
 type Query {
-
+    prueba:String!,
+    me:User    
 }
 
 type AuthToken {
@@ -8,12 +9,13 @@ type AuthToken {
 
 type Mutation {
     signup(data: UserInput!): AuthToken,
-    login(email: String!, password:String!): AuthToken
+    login(email: String!, password:String!): AuthToken,
+    uploadImage(data: ImageInput!): String
 }
 
 enum Gender {
-    Male,
-    Female
+    MALE,
+    FEMALE
 }
 
 input UserInput {
@@ -22,6 +24,41 @@ input UserInput {
     email: String!,
     password: String!,
     birth_date: String,
-    gender: Gender,
-    nationality: String
+    gender: Gender
+}
+
+type User {
+    first_name:String,
+    last_name:String,
+    email:String,
+    birth_date:String,
+    gender:Gender,
+    image_id:[Image],
+    is_active:Boolean
+}
+
+input ImageInput {
+    likes_quantity:Int!,
+    comments:[CommentsInput],
+    url:String!,
+    description:String!
+}
+
+type Image {
+    likes_quantity:Int,
+    comments:[Comments],
+    url:String,
+    description:String
+}
+
+type Comments {
+    description:String,
+    is_active:Boolean,
+    user_id:User
+}
+
+input CommentsInput {
+    description:String,
+    is_active:Boolean,
+    user_id:UserInput
 }
